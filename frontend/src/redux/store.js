@@ -22,19 +22,12 @@ const cartItemsInLocalStorage = localStorage.getItem("cart")
   ? JSON.parse(localStorage.getItem("cart"))
   : [];
 
-const orderedCartItemsInLocalStorage = localStorage.getItem("orderedCart")
-  ? JSON.parse(localStorage.getItem("orderedCart"))
-  : [];
-
 
 const INITIAL_STATE = {
   cart: {
     cartItems: cartItemsInLocalStorage,
   },
-  orderedCart: {
-    orderedItems: orderedCartItemsInLocalStorage
-  }
-
+ 
 };
 
 const store = createStore(
