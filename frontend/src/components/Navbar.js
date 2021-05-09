@@ -14,7 +14,7 @@ const Navbar = ({ click }) => {
     <nav className="navbar">
       <div className="navbar__logo">
         <Link to="/">
-        <h2>Ecommerce M3G</h2>
+        <h2>Shopping Cart - M3G</h2>
         </Link>
       </div>
 
