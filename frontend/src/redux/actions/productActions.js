@@ -1,12 +1,12 @@
 import * as actionTypes from "../constants/productConstants";
-import axios from "axios";
 
 export const getProducts = () => async (dispatch) => {
   try {
     dispatch({ type: actionTypes.GET_PRODUCTS_REQUEST });
 
-    const { data } = await axios.get("/api/products");
-
+   // const { data } = await axios.get("/api/products");
+    const test = await fetch(`/api/products`);
+    var data  = await test.json();   
     dispatch({
       type: actionTypes.GET_PRODUCTS_SUCCESS,
       payload: data,
@@ -26,8 +26,9 @@ export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: actionTypes.GET_PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`/api/products/${id}`);
-
+//    const { data } = await axios.get(`/api/products/${id}`);
+    const test = await fetch(`/api/products/${id}`);
+    var data  = await test.json();
     dispatch({
       type: actionTypes.GET_PRODUCT_DETAILS_SUCCESS,
       payload: data,

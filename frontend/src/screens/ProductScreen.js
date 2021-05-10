@@ -32,17 +32,17 @@ const ProductScreen = ({ match, history }) => {
         <h2>{error}</h2>
       ) : (
         <>
-          <div className="productscreen__left">
+          <section className="productscreen__left" itemscope itemtype="https://schema.org/Product">
             <div className="left__image">
-              <img src={product.imageUrl} alt={product.name} />
+              <img src={product.imageUrl} alt={product.name} itemprop="image"/>
             </div>
             <div className="left__info">
-              <p className="left__name">{product.name}</p>
-              <p>Price: ${product.price}</p>
-              <p>Description: {product.description}</p>
+              <p className="left__name" itemprop="name">{product.name}</p>
+              <p >Price: ${product.price}</p>
+              <p itemprop="description">Description: {product.description}</p>
             </div>
-          </div>
-          <div className="productscreen__right">
+          </section>
+          <section className="productscreen__right">
             <div className="right__info">
               <p>
                 Price:
@@ -70,7 +70,7 @@ const ProductScreen = ({ match, history }) => {
                 </button>
               </p>
             </div>
-          </div>
+          </section>
         </>
       )}
     </div>

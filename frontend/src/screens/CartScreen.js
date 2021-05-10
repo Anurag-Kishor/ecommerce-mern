@@ -42,15 +42,22 @@ const CartScreen = () => {
         cartdetails: cartItems, paymentData: data
       }
 
-      console.log(variables);
-
-      axios.post('/api/products/order', variables).then(response => 
-        {
+      console.log(JSON.stringify(variables));
+      
+      // axios.post('/api/products/order', variables).then(response => 
+      //   {
            
-        }
-      )
-
-      console.log("im in post");
+      //   }
+      // )
+      fetch('/api/products/order', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+        },
+        'body': JSON.stringify(variables),
+      })
+      //console.log("im in post");
       emptyCart();
       
   }

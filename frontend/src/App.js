@@ -17,7 +17,9 @@ function App() {
 
   return (
     <Router>
+      <header className="header">
       <Navbar click={() => setSideToggle(true)} />
+      </header>
       <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <main className="app">
